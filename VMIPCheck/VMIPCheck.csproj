@@ -77,6 +77,9 @@
   <ItemGroup>
     <Content Include="kosmicVMapp.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="kosmicVMapp.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
