@@ -58,7 +58,7 @@ namespace VMIPCheck
 
                 //send a notification about the result
                 NotifyIcon notifyIcon1 = new NotifyIcon();
-                notifyIcon1.Icon = Properties.Resources.appicon;
+                notifyIcon1.Icon = Properties.Resources.kosmicVMapp;
                 notifyIcon1.BalloonTipTitle = "VMIPCheck | " + args[2];
                 notifyIcon1.BalloonTipText = output;
                 notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
