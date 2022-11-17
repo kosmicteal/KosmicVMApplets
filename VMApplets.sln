@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32929.386
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VMIPCheck", "VMIPCheck\VMIPCheck.csproj", "{67759B62-F7C5-4274-9265-C56877AFAA16}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VMIPCheck", "VMIPCheck\VMIPCheck.csproj", "{7CA24179-5338-41D9-9C29-4C0CFACA53CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{67759B62-F7C5-4274-9265-C56877AFAA16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67759B62-F7C5-4274-9265-C56877AFAA16}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67759B62-F7C5-4274-9265-C56877AFAA16}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67759B62-F7C5-4274-9265-C56877AFAA16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CA24179-5338-41D9-9C29-4C0CFACA53CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CA24179-5338-41D9-9C29-4C0CFACA53CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CA24179-5338-41D9-9C29-4C0CFACA53CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CA24179-5338-41D9-9C29-4C0CFACA53CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
