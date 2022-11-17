@@ -63,9 +63,9 @@ namespace VMIPCheck.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon appicon {
+        internal static System.Drawing.Icon kosmicVMapp {
             get {
-                object obj = ResourceManager.GetObject("appicon", resourceCulture);
+                object obj = ResourceManager.GetObject("kosmicVMapp", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
