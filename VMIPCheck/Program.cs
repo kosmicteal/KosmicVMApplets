@@ -24,30 +24,29 @@ namespace VMIPCheck
             using (Process process = new Process())
             {
                 args = Environment.GetCommandLineArgs();
-                string output;
+                String output, VMname;
+
                 try
                 {
                     //launch vboxmanage
-                    process.StartInfo.FileName = args[1] + "\\VBoxManage.exe";
-                    process.StartInfo.Arguments = "guestproperty get \"" + args[2] + "\" \"/VirtualBox/GuestInfo/Net/0/V4/IP\"";
-                    process.StartInfo.UseShellExecute = false;
-                    process.StartInfo.CreateNoWindow = true;
-                    process.StartInfo.RedirectStandardOutput = true;
-                    process.Start();
+                    String filename = args[1] + "\\VBoxManage.exe";
+                    String arguments = "guestproperty get \"" + args[2] + "\" \"/VirtualBox/GuestInfo/Net/0/V4/IP\"";
 
-                    //read the standard output of vboxmanage
-                    StreamReader reader = process.StandardOutput;
-                    output = reader.ReadToEnd();
+                    VMAppletsClass.VMAppletsCalls vmclass = new VMAppletsClass.VMAppletsCalls();
+                    output = vmclass.ProcessCall(filename, arguments);
+                    VMname = args[2];
 
                     if (output.Equals("")) { output = "VM not found or available."; } else if (args[1].Equals("about")) { output = "KosmicTeal - 2022"; }
                 }
                 catch (System.IndexOutOfRangeException)
                 {
                     output = "Out of range, I need two arguments!";
+                    VMname = "Argument Error";
                 }
                 catch (System.ComponentModel.Win32Exception)
                 {
                     output = "VBoxManage.exe not found, check the file address argument.";
+                    VMname = "Filename Error";
                 }
 
                 //get value of IP
@@ -59,7 +58,7 @@ namespace VMIPCheck
                 //send a notification about the result
                 NotifyIcon notifyIcon1 = new NotifyIcon();
                 notifyIcon1.Icon = Properties.Resources.kosmicVMapp;
-                notifyIcon1.BalloonTipTitle = "VMIPCheck | " + args[2];
+                notifyIcon1.BalloonTipTitle = "VMIPCheck | " + VMname;
                 notifyIcon1.BalloonTipText = output;
                 notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
                 notifyIcon1.Visible = true;
