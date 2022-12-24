@@ -1,6 +1,6 @@
 # KosmicVMApplets
 ![](https://img.shields.io/badge/version-1.1.0-blue) ![](https://img.shields.io/badge/intended%20for-VirtualBox-183861)
-![alt text](https://github.com/OSformula/ColorSynth/blob/master/01_ColorSynth.png)
+![alt text](https://github.com/kosmicteal/KosmicVMApplets/blob/master/05_KVMA.png)
 
 VirtualBox belongs to Oracle (https://www.virtualbox.org/)
 
