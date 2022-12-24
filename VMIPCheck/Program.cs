@@ -20,11 +20,14 @@ namespace VMIPCheck
             if (Process.GetProcesses().Count(p => p.ProcessName == currentprocess) > 1)
                 return;
 
+            
 
             using (Process process = new Process())
             {
                 args = Environment.GetCommandLineArgs();
                 String output, VMname;
+
+                VMAppletsClass.VMAppletsCalls vmclass = new VMAppletsClass.VMAppletsCalls();
 
                 try
                 {
@@ -32,7 +35,6 @@ namespace VMIPCheck
                     String filename = args[1] + "\\VBoxManage.exe";
                     String arguments = "guestproperty get \"" + args[2] + "\" \"/VirtualBox/GuestInfo/Net/0/V4/IP\"";
 
-                    VMAppletsClass.VMAppletsCalls vmclass = new VMAppletsClass.VMAppletsCalls();
                     output = vmclass.ProcessCall(filename, arguments);
                     VMname = args[2];
 
@@ -56,14 +58,7 @@ namespace VMIPCheck
                 }
 
                 //send a notification about the result
-                NotifyIcon notifyIcon1 = new NotifyIcon();
-                notifyIcon1.Icon = Properties.Resources.kosmicVMapp;
-                notifyIcon1.BalloonTipTitle = "VMIPCheck | " + VMname;
-                notifyIcon1.BalloonTipText = output;
-                notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
-                notifyIcon1.Visible = true;
-                notifyIcon1.ShowBalloonTip(60000);
-
+                vmclass.NotifyWindows(Properties.Resources.kosmicVMapp, "VMIPCheck | " + VMname, output, ToolTipIcon.Info, 60000);
 
                 try
                 {

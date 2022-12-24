@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace VMAppletsClass
 {
@@ -34,5 +35,19 @@ namespace VMAppletsClass
                 return output;
             }
         }
+
+        public void NotifyWindows(System.Drawing.Icon icon, string title, string text, ToolTipIcon balloonicon, int time)
+        {
+            //send a notification about the result
+            NotifyIcon notifyIcon1 = new NotifyIcon();
+            notifyIcon1.Icon = icon;
+            notifyIcon1.BalloonTipTitle = title;
+            notifyIcon1.BalloonTipText = text;
+            notifyIcon1.BalloonTipIcon = balloonicon;
+            notifyIcon1.Visible = true;
+            notifyIcon1.ShowBalloonTip(time);
+
+        }
     }
+
 }
